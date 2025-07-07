@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Místico</title>
+    <link rel="stylesheet" href="./chatbot.css">
+</head>
+<body>
+    <div class="constellation" id="constellation"></div>
+    <div id="stars-container"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>Conversación Mística</h1>
+        </div>
+        
+        <div class="chat-container" id="chat-container">
+            <div class="message received">
+                <div>Bienvenido a este espacio de reflexión y conexión. ¿Qué misterios traes hoy?</div>
+                <div class="message-time">10:23 AM</div>
+            </div>
+            <div class="message sent">
+                <div>Hola, estoy buscando respuestas en las estrellas.</div>
+                <div class="message-time">10:24 AM</div>
+            </div>
+            <div class="message received">
+                <div>Las estrellas han visto muchas cosas desde el principio de los tiempos. Cada una guarda un secreto.</div>
+                <div class="message-time">10:24 AM</div>
+            </div>
+            <div class="message received">
+                <div>Mira hacia arriba y permite que su luz te guíe.</div>
+                <div class="message-time">10:25 AM</div>
+            </div>
+            <div class="typing-indicator" id="typing-indicator">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="input-container">
+            <input type="text" id="message-input" placeholder="Escribe tu mensaje..." autocomplete="off">
+            <button id="send-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </button>
+        </div>
+
+        <div class="message-footer">
+            Las conversaciones aquí fluyen como los antiguos ríos de sabiduría
+        </div>
+    </div>
+
+    <script src="./chatbot.js"></script>
+</body>
+</html>

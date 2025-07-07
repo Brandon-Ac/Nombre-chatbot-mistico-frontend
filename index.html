@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sistema de Cartas Místicas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="bg-gradient-to-b from-purple-900 to-indigo-900 min-h-screen text-white">
+  <!-- Pantalla de bienvenida -->
+  <div id="welcomeScreen" class="fixed inset-0 bg-purple-900 flex flex-col items-center justify-center z-50 text-center p-6">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-600">
+      Bienvenido a Cartas Místicas
+    </h1>
+    <p class="text-base sm:text-lg text-purple-300 mb-8">Descubre tu mensaje del día y explora las cartas místicas.</p>
+    <button id="enterBtn" class="btn-action px-8 py-3 rounded-lg text-white font-semibold">
+      Entrar
+    </button>
+  </div>
+
+  <!-- Sección principal -->
+  <div class="container mx-auto px-4 py-12" id="cardsSection" tabindex="-1">
+    <header class="text-center mb-12">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">
+        Cartas Místicas
+      </h1>
+      <p class="text-lg text-purple-200">Descubre tu mensaje del día</p>
+    </header>
+
+    <!-- Botones de acción -->
+    <div class="flex flex-col gap-4 md:flex-row justify-center mb-12">
+        <button
+            id="dailyCardBtn"
+            class="px-6 py-3 rounded-lg font-medium text-white bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600 transition-transform transform hover:scale-105 shadow-lg"
+        >
+            Carta del Día
+        </button>
+
+        <button
+            id="randomCardBtn"
+            class="px-6 py-3 rounded-lg font-medium text-white bg-gradient-to-r from-pink-600 to-purple-500 hover:from-pink-700 hover:to-purple-600 transition-transform transform hover:scale-105 shadow-lg"
+        >
+            Carta Aleatoria
+        </button>
+
+        <button
+            id="selectCardBtn"
+            class="px-6 py-3 rounded-lg font-medium text-white bg-gradient-to-r from-indigo-600 to-blue-500 hover:from-indigo-700 hover:to-blue-600 transition-transform transform hover:scale-105 shadow-lg"
+        >
+            Seleccionar Carta
+        </button>
+    </div>
+
+
+    <!-- Galería de cartas -->
+    <div id="cardGallery" class="hidden mb-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 justify-center"></div>
+
+    <!-- Carta principal -->
+    <div id="mainCardDisplay" class="hidden flex justify-center mb-8">
+      <div class="card-container w-full max-w-xs sm:max-w-sm md:max-w-md">
+        <div id="card" class="card relative w-full h-[400px] sm:h-[500px] cursor-pointer">
+          <div class="card-front">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/96c7722e-8bb0-4138-a2fb-fadc7a62f2f4.png" alt="Diseño místico de carta" class="mb-4 rounded-xl w-full h-48 object-cover shadow-xl border-2 border-yellow-400" />
+            <h2 id="cardTitle" class="text-xl font-semibold text-center"></h2>
+            <p id="cardQuestion" class="text-purple-200 text-center mt-2"></p>
+            <div class="absolute bottom-4 text-xs text-purple-300">
+              Haz clic para voltear la carta
+            </div>
+          </div>
+          <div class="card-back">
+            <div id="cardAnswer" class="text-sm text-purple-200 text-center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Información adicional -->
+    <div id="cardInfo" class="mt-8 text-center text-purple-200 italic hidden">
+      Mensaje especial de la carta
+    </div>
+  </div>
+
+  <!-- Botón flotante -->
+  <a href="./chatbot.html" class="chatbot-btn" id="chatbotButton">🤖 ¿Necesitas ayuda?</a>
+
+  <script src="script.js"></script>
+</body>
+</html>
