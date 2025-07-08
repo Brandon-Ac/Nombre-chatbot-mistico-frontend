@@ -45,11 +45,12 @@ document.addEventListener('DOMContentLoaded', function() {
     typingIndicator.classList.add('active');
 
     try {
-      const response = await fetch("https://backend-web-b7rm.onrender.com", {
+      const response = await fetch("https://backend-web-b7rm.onrender.com/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ pregunta })
+        body: JSON.stringify({ message: pregunta })  // 👈 este nombre debe coincidir con tu backend
       });
+
 
       const data = await response.json();
       typingIndicator.classList.remove('active');
